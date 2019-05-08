@@ -1,0 +1,130 @@
+.hidden.menu 
+    display: none
+
+.ui.menu
+    transition: all 1s ease
+    &.top.transp
+        background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
+        .item
+            color: white !important
+            &.logo
+                color: white !important
+    &.inverted.top
+        background-color: rgb(234, 114, 61) !important
+    margin-top: 0
+    margin-bottom: 0
+    .item
+        cursor: pointer
+        font-weight: 600
+        &__search input[type=text]
+            border-radius: 1.285714rem !important
+            border-color: transparent
+            background-color: rgba(255, 255, 255, 0.5) !important
+            color: $white-two
+            &::placeholder
+                font-size: 23px
+        &:active
+            font-weight: 600
+    .item.logo
+       font-size: 21px !important
+       font-weight: 600
+       color: white
+
+.ui.container.navbar
+    width: 90% !important
+.top.normal
+    transition: 300ms ease
+.top.fixed
+    animation: fadeIn 2s
+    
+@keyframes fadeIn
+    from {opacity: 0 }
+    to {opacity: 1 }
+
+
+.shopping.bag
+    .floating.label
+        position: absolute
+        z-index: 100
+        top: 0em
+        left: 75%
+        margin: 0 0 0 -1.5em!important
+        color: $orange
+        background-color: $white-two
+    &.black
+        .floating.label
+            background-color: $orange
+            color: $white-two
+
+
+.ui.mobile.mn 
+    @include screen-size-tablet-max
+        display: flex
+    display: none
+    position: fixed
+    background: white
+    top: 0
+    height: 4.1em
+    width: 100%
+    z-index: 12
+    box-shadow: 0 0px 1px rgba(0,0,0,0.12), 0 0px 1px rgba(0,0,0,0.24);
+    flex: none
+    justify-content: space-between;
+    .item
+        margin: .3em
+            
+    .arrow.left.icon
+        color: $orange
+        cursor: pointer
+        margin-top: .5em;
+    .right
+        margin-right: 1em !important;    
+    .logo
+        font-size: 1.7em;
+        margin-top: .4em;
+        font-weight: 600
+        color: $orange
+
+.bars 
+  width: 80px
+  height: 4em;
+  cursor: pointer
+  &.active 
+      >.top 
+        stroke-dashoffset: -132px
+      >.middle
+          stroke-dashoffset: -71px
+      >.bottom
+          stroke-dashoffset: -132px
+  >.line 
+    fill: none
+    stroke: $orange
+    stroke-width: 4
+    stroke-linecap: square
+    transition: stroke-dasharray 400ms,  stroke-dashoffset 400ms
+    &.top 
+        stroke-dasharray: 40 172
+    &.middle 
+        stroke-dasharray: 40 111
+    &.bottom 
+        stroke-dasharray: 40 172
+   
+.visible
+    transition: all 400ms
+
+.back
+    opacity: 0
+
+@include screen-size-tablet-max
+    .pusher
+        margin-top: 17%
+    .ui.top.menu 
+        display: none !important
+    .secondary.pointing.menu .item,
+    .secondary.pointing.menu .menu 
+        display: none
+    
+    .secondary.pointing.menu .toc.item 
+      display: block
+
+  
